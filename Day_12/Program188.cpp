@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name    : DisplayFactors
+//  Description      : Displays all factors of the given integer except the number itself.
+//  Input            : Integer iNo - Number whose factors are to be displayed
+//  Output           : None (Prints factors on console)
+//  Author           : Gavade Somanath Vilas
+//  Date             : 23/02/2026
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Function Definition
+void DisplayFactors(int iNo)        // Time Complexcity = O(N / 2)
+{
+    int iCnt = 0;
+
+    for(iCnt = 1; iCnt <= (iNo / 2); iCnt++)
+    {
+        if(iNo % iCnt == 0)
+        {
+            cout << iCnt << "\t";
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Application Name : Display Factors of a Number
+//  Description      : This application accepts an integer from user, calls DisplayFactors function, and displays its factors.
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int iValue = 0;
+
+    cout << "Enter a Number : \n";
+    cin >> iValue;
+
+    DisplayFactors(iValue);    // Function Call
+
+    return 0;
+}
