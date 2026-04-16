@@ -1,0 +1,62 @@
+#include<stdio.h>
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Function Name    : Reverse()
+//  Description      : Reverses the given string using two pointer technique.
+//  Input            : Character pointer (string)
+//  Output           : None (modifies original string)
+//  Time Complexity  : O(N/2)
+//  Date             : 15/04/2026
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Reverse(char *str)
+{
+    char *Start = str;
+    char *End = str;
+
+    char Temp = '\0';
+
+    while(*End != '\0')
+    {
+        End++;
+    }
+
+    End--;
+
+    while(Start < End)
+    {
+        Temp = *Start;
+        *Start = *End;
+        *End = Temp;
+
+        Start++;
+        End--;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//  Application Name : String Reverse Program
+//  Description      : This program accepts a string from user and reverses it.
+//  Input            : String
+//  Output           : Displays reversed string
+//  Author           : Gavade Somanath Vilas
+//  Date             : 15/04/2026
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    char Arr[30];
+
+    printf("Enter a string : \n");
+    scanf("%[^\n]",Arr);
+
+    Reverse(Arr);
+
+    printf("String after reversal : %s\n", Arr);
+
+    return 0;
+}
